@@ -6,10 +6,21 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 task-board は React 製のシンプルなタスク管理アプリです。テキスト入力でのタスク追加、チェックボックスによる完了・未完了の切り替え、タスクの削除ができ、完了済みタスクはグレー表示になります。
 
+## デプロイ先
+
+- https://Tamramey.github.io/task-board/
+
 ## 技術スタック
 
 - React 19 + Vite 8(`@vitejs/plugin-react`)
 - Lint: oxlint
+
+## コンポーネントの命名規約
+
+- コンポーネントは `src/components/` 配下に1ファイル1コンポーネントで配置し、ファイル名・コンポーネント名ともにPascalCase(例: `TaskBoard.jsx`、`TaskItem.jsx`)。
+- 各コンポーネントに対応するCSSは同名の `.css` ファイル(例: `TaskBoard.css`)にまとめ、コンポーネントファイル側で `import` する。
+- CSSクラス名はBEM風の命名(`ブロック`、`ブロック__要素`、`ブロック--状態`)を使う(例: `task-item`、`task-item__label`、`task-item--completed`)。ブロック名はケバブケースで、コンポーネント名と対応させる。
+- イベントハンドラーの props/関数名は `onXxx`(呼び出し側から渡すコールバック)/ `handleXxx`(コンポーネント内で定義する処理)の対応で統一する(例: `onToggle` props ↔ `handleToggleTask` 関数)。
 
 ## よく使うコマンド
 
