@@ -27,7 +27,7 @@ npm run lint    # oxlint によるLint
 
 - `src/main.jsx` — エントリーポイント。`App` をDOMにマウントする。
 - `src/App.jsx` — `TaskBoard` をレンダリングするだけの薄いルートコンポーネント。
-- `src/components/TaskBoard.jsx` — タスク一覧の状態(`tasks` 配列、`{ id, text, completed }`)を保持する唯一のコンポーネント。タスクの追加・完了切り替え・削除のハンドラーをここで定義し、`TaskItem` に props として渡す(状態はローカルの `useState` のみで、永続化やグローバルストアは使用していない)。
+- `src/components/TaskBoard.jsx` — タスク一覧の状態(`tasks` 配列、`{ id, text, completed }`)を保持する唯一のコンポーネント。タスクの追加・完了切り替え・削除のハンドラーをここで定義し、`TaskItem` に props として渡す。`tasks` は `localStorage`(キー: `task-board:tasks`)に自動保存され、初期状態も `localStorage` から読み込む(グローバルストアは使用していない)。
 - `src/components/TaskItem.jsx` — 1件のタスク行の表示(チェックボックス・テキスト・削除ボタン)。完了時は `task-item--completed` クラスが付与され、`TaskBoard.css` でグレー表示・打ち消し線のスタイルが当たる。
 - `src/index.css` — ライト/ダークテーマ用のCSS変数(`--accent`、`--border` など)を定義するグローバルスタイル。コンポーネント側のCSS(`TaskBoard.css`)はこれらの変数を再利用する。
 
