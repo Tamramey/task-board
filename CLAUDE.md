@@ -6,6 +6,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 task-board は React 製のシンプルなタスク管理アプリです。テキスト入力でのタスク追加、チェックボックスによる完了・未完了の切り替え、タスクの削除ができ、完了済みタスクはグレー表示になります。
 
+このリポジトリのルート直下がこのタスクボードアプリ本体で、他に独立したサブプロジェクトが同居することがある(例: [real-estate-app/](real-estate-app/CLAUDE.md))。サブプロジェクト配下での作業はそれぞれの `CLAUDE.md` を参照すること。
+
 ## デプロイ先
 
 - https://Tamramey.github.io/task-board/
