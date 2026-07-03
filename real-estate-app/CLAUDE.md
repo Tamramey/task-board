@@ -48,6 +48,10 @@ npm run lint    # oxlint によるLint
 
 このプロジェクトに自動テストは未導入です。
 
+## デプロイ(Vercel)
+
+`vercel.json` でSPA向けのrewriteを設定し、どのURLにアクセスされても `index.html` を返してブラウザ側のReact Routerにルーティングを任せる。Supabaseの接続情報(`VITE_SUPABASE_URL` / `VITE_SUPABASE_PUBLISHABLE_KEY`)は `vercel.json` には含めず、Vercelダッシュボードの環境変数設定で管理する。
+
 ## アーキテクチャ
 
 - `src/main.jsx` — エントリーポイント。`BrowserRouter` で `App` をラップしてDOMにマウントする。
